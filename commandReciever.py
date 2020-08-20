@@ -18,6 +18,7 @@ while True:
     os.system("sleep 2")
     os.system("clear")
     x = input("What can I do for you?")
+    x = x.lower()
         
     if ( ("start" in x) or ("run" in x) or ("execute" in x) or ("open" in x )):
         # firefox
@@ -43,7 +44,7 @@ while True:
                 """)
 
         #vscode
-        elif("vscode" in x ) and ( ("don't" not in x ) or ( "not" not in x )) :
+        elif( ( "vscode" in x ) or ("visual studio" in x ) ) and ( ("don't" not in x ) or ( "not" not in x )) :
             os.system("""
                 espeak "Opening Visual Studio Code .... Please Wait ... " 
             """)
@@ -164,6 +165,9 @@ while True:
                 """)
     
     elif("exit" in x ) or ("quit" in x) or ("close" in x ) and ( ("don't" not in x ) or ( "not" not in x )) :
+        os.system("""
+            espeak " See yaa later " 
+        """)
         break 
     else:
         os.system("""
